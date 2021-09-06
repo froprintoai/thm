@@ -1,0 +1,8 @@
+
+gobuster result
+/img                  (Status: 301) [Size: 310] [--> http://10.10.19.247/img/]
+/downloads            (Status: 301) [Size: 316] [--> http://10.10.19.247/downloads/]
+/aboutus              (Status: 301) [Size: 314] [--> http://10.10.19.247/aboutus/]  
+/css                  (Status: 301) [Size: 310] [--> http://10.10.19.247/css/]
+/downloads/src                  (Status: 301) [Size: 320] [--> http://10.10.19.247/downloads/src/
+/downloads/builds               (Status: 301) [Size: 323] [--> http://10.10.19.247/downloads/builds/]kI

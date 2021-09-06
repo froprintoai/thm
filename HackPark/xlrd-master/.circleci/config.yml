@@ -1,0 +1,98 @@
+version: 2.1
+
+orbs:
+  python: cjw296/python-ci@2.1
+
+jobs:
+  coverage:
+    docker:
+      - image: circleci/python:3.8
+    steps:
+      - checkout
+      - attach_workspace:
+          at: coverage_output
+      - run:
+          name: "Check coverage"
+          command: |
+            sudo pip install coverage
+            coverage combine coverage_output/
+            bash <(curl -s https://codecov.io/bash)
+
+  check-package:
+    parameters:
+      image:
+        type: string
+    docker:
+      - image: << parameters.image >>
+    steps:
+      - python/check-package:
+          package: "xlrd"
+          test:
+          - run:
+              name: "Check Import"
+              command: python -c "import xlrd"
+          - run:
+              name: "Check no XLS in wheel"
+              command: "! unzip -l dist/*.whl | egrep '.xlsx?$'"
+          - run:
+              name: "Check no XLS in source dist"
+              command: "! tar tzf dist/*.tar.gz | egrep '.xlsx?$'"
+
+common: &common
+  jobs:
+
+    - python/pip-run-tests:
+        matrix:
+          parameters:
+            image:
+              - circleci/python:2.7
+              - circleci/python:3.6
+              - circleci/python:3.9
+
+    - coverage:
+        name: coverage
+        requires:
+          - python/pip-run-tests
+
+    - python/pip-docs:
+        name: docs
+        requires:
+          - coverage
+
+    - python/pip-setuptools-build-package:
+        name: package
+        requires:
+          - docs
+        filters:
+          branches:
+            only: master
+
+    - check-package:
+        matrix:
+          parameters:
+            image:
+              - circleci/python:2.7
+              - circleci/python:3.9
+        requires:
+          - package
+
+    - python/release:
+        name: release
+        config: .carthorse.yml
+        requires:
+          - check-package
+        filters:
+          branches:
+            only: master
+
+workflows:
+  push:
+    <<: *common
+  periodic:
+    <<: *common
+    triggers:
+      - schedule:
+          cron: "0 0 11 * *"
+          filters:
+            branches:
+              only: master

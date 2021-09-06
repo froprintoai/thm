@@ -1,0 +1,36 @@
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-08-30 04:01 CDT
+NSE: Loaded 45 scripts for scanning.
+Initiating Ping Scan at 04:01
+Scanning 10.10.11.103 [2 ports]
+Completed Ping Scan at 04:01, 0.26s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 04:01
+Completed Parallel DNS resolution of 1 host. at 04:01, 0.01s elapsed
+Initiating Connect Scan at 04:01
+Scanning 10.10.11.103 [1000 ports]
+Discovered open port 80/tcp on 10.10.11.103
+Discovered open port 22/tcp on 10.10.11.103
+Increasing send delay for 10.10.11.103 from 0 to 5 due to max_successful_tryno increase to 4
+Discovered open port 2222/tcp on 10.10.11.103
+Increasing send delay for 10.10.11.103 from 5 to 10 due to max_successful_tryno increase to 5
+Increasing send delay for 10.10.11.103 from 10 to 20 due to max_successful_tryno increase to 6
+Completed Connect Scan at 04:01, 22.99s elapsed (1000 total ports)
+Initiating Service scan at 04:01
+Scanning 3 services on 10.10.11.103
+Completed Service scan at 04:01, 6.46s elapsed (3 services on 1 host)
+NSE: Script scanning 10.10.11.103.
+Initiating NSE at 04:01
+Completed NSE at 04:02, 1.17s elapsed
+Initiating NSE at 04:02
+Completed NSE at 04:02, 1.02s elapsed
+Nmap scan report for 10.10.11.103
+Host is up (0.20s latency).
+Not shown: 997 closed ports
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+80/tcp   open  http    Apache httpd 2.4.29 ((Ubuntu))
+2222/tcp open  ssh     OpenSSH 8.2p1 Debian 4 (protocol 2.0)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 32.26 seconds

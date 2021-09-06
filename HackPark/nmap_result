@@ -1,0 +1,28 @@
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-07-31 22:54 CDT
+NSE: Loaded 45 scripts for scanning.
+Initiating Parallel DNS resolution of 1 host. at 22:54
+Completed Parallel DNS resolution of 1 host. at 22:54, 0.07s elapsed
+Initiating Connect Scan at 22:54
+Scanning 10.10.222.101 [1000 ports]
+Discovered open port 3389/tcp on 10.10.222.101
+Discovered open port 80/tcp on 10.10.222.101
+Completed Connect Scan at 22:54, 20.90s elapsed (1000 total ports)
+Initiating Service scan at 22:54
+Scanning 2 services on 10.10.222.101
+Completed Service scan at 22:54, 12.05s elapsed (2 services on 1 host)
+NSE: Script scanning 10.10.222.101.
+Initiating NSE at 22:54
+Completed NSE at 22:54, 0.84s elapsed
+Initiating NSE at 22:54
+Completed NSE at 22:54, 0.83s elapsed
+Nmap scan report for 10.10.222.101
+Host is up (0.22s latency).
+Not shown: 998 filtered ports
+PORT     STATE SERVICE            VERSION
+80/tcp   open  http               Microsoft IIS httpd 8.5
+3389/tcp open  ssl/ms-wbt-server?
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 35.06 seconds

