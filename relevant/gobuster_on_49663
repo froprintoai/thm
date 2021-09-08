@@ -2,7 +2,7 @@
 Gobuster v3.1.0
 by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 ===============================================================
-[+] Url:                     http://10.10.34.138:49663
+[+] Url:                     http://10.10.74.182:49663
 [+] Method:                  GET
 [+] Threads:                 10
 [+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
@@ -10,7 +10,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 [+] User Agent:              gobuster/3.1.0
 [+] Timeout:                 10s
 ===============================================================
-2021/09/07 14:28:22 Starting gobuster in directory enumeration mode
+2021/09/07 18:06:35 Starting gobuster in directory enumeration mode
 ===============================================================
 /*checkout*           (Status: 400) [Size: 3420]
 /*docroot*            (Status: 400) [Size: 3420]
@@ -23,3 +23,10 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 /**http%3A            (Status: 400) [Size: 3420]
 /http%3A%2F%2Fyoutube (Status: 400) [Size: 3420]
 /http%3A%2F%2Fblogs   (Status: 400) [Size: 3420]
+/http%3A%2F%2Fblog    (Status: 400) [Size: 3420]
+/**http%3A%2F%2Fwww   (Status: 400) [Size: 3420]
+/s%26p                (Status: 400) [Size: 3420]
+/%3FRID%3D2671        (Status: 400) [Size: 3420]
+/devinmoore*          (Status: 400) [Size: 3420]
+/119043               (Status: 503) [Size: 326] 
+/121922               (Status: 503) [Size: 326] 
