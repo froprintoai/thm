@@ -1,37 +1,37 @@
-Starting Nmap 7.91 ( https://nmap.org ) at 2021-09-05 20:04 CDT
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-09-07 13:04 CDT
 NSE: Loaded 45 scripts for scanning.
-Initiating Ping Scan at 20:04
-Scanning 10.10.62.2 [2 ports]
-Completed Ping Scan at 20:04, 0.20s elapsed (1 total hosts)
-Initiating Parallel DNS resolution of 1 host. at 20:04
-Completed Parallel DNS resolution of 1 host. at 20:04, 0.01s elapsed
-Initiating Connect Scan at 20:04
-Scanning 10.10.62.2 [1000 ports]
-Discovered open port 3389/tcp on 10.10.62.2
-Discovered open port 80/tcp on 10.10.62.2
-Discovered open port 445/tcp on 10.10.62.2
-Discovered open port 135/tcp on 10.10.62.2
-Discovered open port 139/tcp on 10.10.62.2
-Completed Connect Scan at 20:04, 10.64s elapsed (1000 total ports)
-Initiating Service scan at 20:04
-Scanning 5 services on 10.10.62.2
-Completed Service scan at 20:04, 8.30s elapsed (5 services on 1 host)
-NSE: Script scanning 10.10.62.2.
-Initiating NSE at 20:04
-Completed NSE at 20:04, 0.85s elapsed
-Initiating NSE at 20:04
-Completed NSE at 20:04, 0.79s elapsed
-Nmap scan report for 10.10.62.2
-Host is up (0.20s latency).
-Not shown: 995 filtered ports
-PORT     STATE SERVICE       VERSION
-80/tcp   open  http          Microsoft IIS httpd 10.0
-135/tcp  open  msrpc         Microsoft Windows RPC
-139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
-445/tcp  open  microsoft-ds  Microsoft Windows Server 2008 R2 - 2012 microsoft-ds
-3389/tcp open  ms-wbt-server Microsoft Terminal Services
-Service Info: OSs: Windows, Windows Server 2008 R2 - 2012; CPE: cpe:/o:microsoft:windows
-
-Read data files from: /usr/bin/../share/nmap
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 21.05 seconds
+Initiating Ping Scan at 13:04
+Scanning 10.10.2.149 [2 ports]
+Completed Ping Scan at 13:04, 0.31s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 13:04
+Completed Parallel DNS resolution of 1 host. at 13:04, 0.01s elapsed
+Initiating Connect Scan at 13:04
+Scanning 10.10.2.149 [65535 ports]
+Discovered open port 3389/tcp on 10.10.2.149
+Discovered open port 135/tcp on 10.10.2.149
+Discovered open port 139/tcp on 10.10.2.149
+Discovered open port 80/tcp on 10.10.2.149
+Discovered open port 445/tcp on 10.10.2.149
+Connect Scan Timing: About 4.38% done; ETC: 13:16 (0:11:17 remaining)
+Connect Scan Timing: About 12.31% done; ETC: 13:12 (0:07:14 remaining)
+Connect Scan Timing: About 12.76% done; ETC: 13:16 (0:10:22 remaining)
+Connect Scan Timing: About 19.67% done; ETC: 13:14 (0:08:14 remaining)
+Connect Scan Timing: About 31.93% done; ETC: 13:12 (0:05:22 remaining)
+Discovered open port 49663/tcp on 10.10.2.149
+Connect Scan Timing: About 40.54% done; ETC: 13:11 (0:04:25 remaining)
+Connect Scan Timing: About 41.12% done; ETC: 13:13 (0:05:02 remaining)
+Increasing send delay for 10.10.2.149 from 0 to 5 due to 43 out of 142 dropped probes since last increase.
+Connect Scan Timing: About 41.23% done; ETC: 13:14 (0:05:44 remaining)
+Increasing send delay for 10.10.2.149 from 5 to 10 due to 11 out of 12 dropped probes since last increase.
+Connect Scan Timing: About 41.34% done; ETC: 13:15 (0:06:25 remaining)
+Increasing send delay for 10.10.2.149 from 10 to 20 due to 11 out of 11 dropped probes since last increase.
+Connect Scan Timing: About 41.45% done; ETC: 13:16 (0:07:05 remaining)
+Increasing send delay for 10.10.2.149 from 20 to 40 due to 11 out of 12 dropped probes since last increase.
+Connect Scan Timing: About 41.55% done; ETC: 13:17 (0:07:46 remaining)
+Connect Scan Timing: About 42.15% done; ETC: 13:19 (0:08:28 remaining)
+Increasing send delay for 10.10.2.149 from 40 to 80 due to 11 out of 36 dropped probes since last increase.
+Connect Scan Timing: About 42.54% done; ETC: 13:20 (0:09:12 remaining)
+Connect Scan Timing: About 42.95% done; ETC: 13:22 (0:10:03 remaining)
+Connect Scan Timing: About 43.40% done; ETC: 13:23 (0:10:59 remaining)
+Connect Scan Timing: About 43.91% done; ETC: 13:25 (0:11:58 remaining)
+Connect Scan Timing: About 44.50% done; ETC: 13:28 (0:13:03 remaining)

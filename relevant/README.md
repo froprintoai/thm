@@ -58,3 +58,10 @@ passwords.txt found in nt4wrksv share
 decoded result (Base64)
 	Bob - !P@$$W0rD!123
 	Bill - Juw4nnaM4n420696969!$$$
+
+It turned out these credentials are useless.
+Rescanning all ports,,,(nmap -v -sV -p1-65535 $TARGET_IP)
+	Discovered open port 49663/tcp on 10.10.2.149
+
+Enumerating $TARGET_IP:49663 using gobuster,,,(gobuster dir -u http://$TARGET_IP:49663 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x .php,.txt,.html,.md,.xml | tee gobuster_on_49663)
+
