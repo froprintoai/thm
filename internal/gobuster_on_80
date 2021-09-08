@@ -1,0 +1,19 @@
+===============================================================
+Gobuster v3.1.0
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.10.88.179
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.1.0
+[+] Extensions:              txt
+[+] Timeout:                 10s
+===============================================================
+2021/09/08 10:17:37 Starting gobuster in directory enumeration mode
+===============================================================
+/blog                 (Status: 301) [Size: 311] [--> http://10.10.88.179/blog/]
+/wordpress            (Status: 301) [Size: 316] [--> http://10.10.88.179/wordpress/]
+/javascript           (Status: 301) [Size: 317] [--> http://10.10.88.179/javascript/]
+/phpmyadmin           (Status: 301) [Size: 317] [--> http://10.10.88.179/phpmyadmin/]
