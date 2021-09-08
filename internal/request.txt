@@ -1,0 +1,14 @@
+POST /phpmyadmin/index.php HTTP/1.1
+Host: 10.10.88.179
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 109
+Origin: null
+Connection: close
+Cookie: pmaCookieVer=5; phpMyAdmin=6iveajul4t03qlftg6g2sc0jrc; pma_lang=en; pma_collation_connection=utf8mb4_unicode_ci
+Upgrade-Insecure-Requests: 1
+
+pma_username=test_user&pma_password=password&server=1&target=index.php&token=627e8f6342052e99df94a815d016a52d
