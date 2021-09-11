@@ -68,7 +68,6 @@ Then, I found an interesting file in /opt directory.
 	wp-save.txt
 	$ cat wp-save.txt
 	Bill,
-
 	Aubreanna needed these credentials for something later.  Let her know you have them and where they are.
 ```
 
