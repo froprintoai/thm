@@ -36,7 +36,9 @@ After examining /phpmyadmin, seemingly mysql is behind the site.
 
 SQLMap didn't find any parameter injectable.  
 
-Tried every exploit on metasploit as follows, but they didn't work. 
+Tried every exploit on metasploit as follows, but they didn't work.   
+
+
    0  exploit/unix/webapp/phpmyadmin_config                 2009-03-24       excellent  No     PhpMyAdmin Config File Code Injection
    1  auxiliary/scanner/http/phpmyadmin_login                                normal     No     PhpMyAdmin Login Scanner
    2  post/linux/gather/phpmyadmin_credsteal                                 normal     No     Phpmyadmin credentials stealer
