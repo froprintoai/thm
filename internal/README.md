@@ -1,3 +1,16 @@
+# Tools
+* nmap
+* gobuster
+* wpscan  
+* Burpsuite
+
+# Techniques  
+* editting /etc/hosts
+* ssh local forwarding
+
+
+# Walkthrough
+
 nmap result(./nmap_result)  
 	```nmap -v -sV -p1-65535 $TARGET_IP | tee nmap_result```
 
