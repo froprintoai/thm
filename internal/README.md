@@ -74,3 +74,28 @@ Then, I found an interesting file in /opt directory.
 	aubreanna:bubb13guM!@#123
 ```
 
+Using this credential, I connect to the target using ssh.  
+Found user.txt, in her home directory.  
+Also, I found a txt file indicating jenkins is running on 172.17.0.2:8080.  
+
+Ran linpeas.sh on the target.  
+	Interesting Info  
+		phpmyadmin's credential: wordpress(wordpress123)  
+
+Performed SSH local forwarding to get access to a Jenkins portal page from web browsers.  
+```ssh -L 8080:172.17.0.2:8080 aubreanna@$TARGET_IP```  
+
+Then I accessed localhost:8080 from a web browser and performed a brute force on Jenkins Login page using Burpsuite. The wordlist I used was rockyou.txt.(Cracked)  
+Then, using Groovy reverse shell scripts, I gained reverse shell to the target as jenkins user.  
+Taking a look at /opt directory, I found notes.txt.  
+```
+cat note.txt
+Aubreanna,
+
+Will wanted these credentials secured behind the Jenkins container since we have several layers of defense here.  Use them if you 
+need access to the root user account.
+
+root:tr0ub13guM!@#123
+```
+
+Finally, I successfully connected to the target again using ssh as a root user.
