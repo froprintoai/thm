@@ -1,0 +1,29 @@
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-09-16 12:53 CDT
+Initiating Parallel DNS resolution of 1 host. at 12:53
+Completed Parallel DNS resolution of 1 host. at 12:53, 0.02s elapsed
+Initiating Connect Scan at 12:53
+Scanning 10.10.174.70 [65535 ports]
+Discovered open port 21/tcp on 10.10.174.70
+Discovered open port 3389/tcp on 10.10.174.70
+Connect Scan Timing: About 6.37% done; ETC: 13:01 (0:07:36 remaining)
+Connect Scan Timing: About 18.20% done; ETC: 12:58 (0:04:34 remaining)
+Connect Scan Timing: About 27.56% done; ETC: 13:00 (0:04:54 remaining)
+Connect Scan Timing: About 37.64% done; ETC: 13:00 (0:04:30 remaining)
+Connect Scan Timing: About 46.04% done; ETC: 13:00 (0:03:46 remaining)
+Connect Scan Timing: About 54.25% done; ETC: 13:00 (0:03:08 remaining)
+Connect Scan Timing: About 61.07% done; ETC: 13:00 (0:02:41 remaining)
+Connect Scan Timing: About 69.14% done; ETC: 13:00 (0:02:06 remaining)
+Connect Scan Timing: About 78.26% done; ETC: 12:59 (0:01:27 remaining)
+Discovered open port 9999/tcp on 10.10.174.70
+Connect Scan Timing: About 84.89% done; ETC: 12:59 (0:01:01 remaining)
+Completed Connect Scan at 12:59, 391.94s elapsed (65535 total ports)
+Nmap scan report for 10.10.174.70
+Host is up (0.20s latency).
+Not shown: 65532 filtered ports
+PORT     STATE SERVICE
+21/tcp   open  ftp
+3389/tcp open  ms-wbt-server
+9999/tcp open  abyss
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 392.00 seconds
