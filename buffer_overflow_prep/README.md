@@ -24,7 +24,7 @@ Using the python script(mona.py), I checked a cyclic pattern on memory stack.
 
 From the diagram above, we could see that the memory address EIP points to is 1978 bytes from EAX.
 Then, I sent "OVERFLOW1" + "A"*1978 + "BBBB" to the program.  
-The registers' contents are below. We could see the memory address EIP points to is filled with 41414141(="BBBB").   
+The registers' contents are below. We could see the memory address EIP points to is filled with 42424242(="BBBB").   
 ![alt text](./images/exploit2_registers.png?raw=true) 
 
 Here are how the stack looks like when sending  

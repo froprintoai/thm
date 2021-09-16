@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 
 import socket, time, sys
+import os
 
-ip = "10.10.226.210"
+ip = os.environ['TARGET_IP']
 
 port = 1337
 timeout = 5
-prefix = "OVERFLOW2 "
+prefix = "OVERFLOW3 "
 
 string = prefix + "A" * 100
 
