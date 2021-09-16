@@ -1,9 +1,9 @@
 # Tools
-
+* nmap for enum  
 # Knowledge
 
 # Walkthrough
-==Enumeration==
+## Enumeration
 The nmap default TCP scan reveals only 3 ports.  
 ```nmap -v -Pn -p1-65535 $TARGET_IP | tee nmap_result```  
 ```
