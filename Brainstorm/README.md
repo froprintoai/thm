@@ -11,4 +11,19 @@ The nmap default TCP scan reveals only 3 ports.
 	21/tcp   open  ftp
 	3389/tcp open  ms-wbt-server
 	9999/tcp open  abyss
+```  
+I accessed a ftp port using ftp command.
+```ftp -v $TARGET_IP 21```  
+I could use the default credential. (Username: anonymous / Password: )  
+Found interesting files in chatserver directory.  
 ```
+	ftp> ls
+	200 PORT command successful.
+	125 Data connection already open; Transfer starting.
+	08-29-19  10:26PM                43747 chatserver.exe
+	08-29-19  10:27PM                30761 essfunc.dll
+```  
+
+Then, I connected to a port 9999 using netcat, and it seemingly is related to chatserver.exe.  
+
+
