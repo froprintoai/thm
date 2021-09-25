@@ -1,7 +1,11 @@
 # Tools
 * nmap for enum  
+* Immunity Debugger and mona script  
+* netcat to catch reverse shell  
+* msfvenom to generage shell code  
 # Knowledge
-
+* FTP's binary mode
+* buffer overflow
 # Walkthrough
 ## Enumeration
 The nmap default TCP scan reveals only 3 ports.  
