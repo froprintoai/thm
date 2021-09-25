@@ -49,4 +49,4 @@ Next, to exploit this chat program using buffer overflow, you need to run it on 
 I set up Windows 7(,XP) on virtualbox, ran the program on Immunity Debugger, and connected from the host Machine.  
 I tested the program by entering a number of As.  
 ![alt text](./images/As.png?raw=true)  
-![alt text](./images/registers.png?raw=true)  
+![alt text](./images/registers?raw=true)  
