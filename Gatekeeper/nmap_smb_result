@@ -1,0 +1,42 @@
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-09-26 10:33 CDT
+Nmap scan report for 10.10.40.122
+Host is up (0.20s latency).
+Not shown: 989 closed ports
+PORT      STATE SERVICE
+135/tcp   open  msrpc
+139/tcp   open  netbios-ssn
+445/tcp   open  microsoft-ds
+3389/tcp  open  ms-wbt-server
+31337/tcp open  Elite
+49152/tcp open  unknown
+49153/tcp open  unknown
+49154/tcp open  unknown
+49155/tcp open  unknown
+49161/tcp open  unknown
+49165/tcp open  unknown
+
+Host script results:
+| smb-enum-shares: 
+|   account_used: guest
+|   \\10.10.40.122\ADMIN$: 
+|     Type: STYPE_DISKTREE_HIDDEN
+|     Comment: Remote Admin
+|     Anonymous access: <none>
+|     Current user access: <none>
+|   \\10.10.40.122\C$: 
+|     Type: STYPE_DISKTREE_HIDDEN
+|     Comment: Default share
+|     Anonymous access: <none>
+|     Current user access: <none>
+|   \\10.10.40.122\IPC$: 
+|     Type: STYPE_IPC_HIDDEN
+|     Comment: Remote IPC
+|     Anonymous access: READ
+|     Current user access: READ/WRITE
+|   \\10.10.40.122\Users: 
+|     Type: STYPE_DISKTREE
+|     Comment: 
+|     Anonymous access: <none>
+|_    Current user access: READ
+
+Nmap done: 1 IP address (1 host up) scanned in 52.94 seconds

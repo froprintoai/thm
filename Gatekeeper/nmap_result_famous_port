@@ -1,0 +1,69 @@
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-09-26 10:18 CDT
+NSE: Loaded 45 scripts for scanning.
+Initiating Ping Scan at 10:18
+Scanning 10.10.40.122 [2 ports]
+Completed Ping Scan at 10:18, 0.19s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 10:18
+Completed Parallel DNS resolution of 1 host. at 10:18, 0.01s elapsed
+Initiating Connect Scan at 10:18
+Scanning 10.10.40.122 [1000 ports]
+Discovered open port 445/tcp on 10.10.40.122
+Discovered open port 139/tcp on 10.10.40.122
+Discovered open port 3389/tcp on 10.10.40.122
+Discovered open port 135/tcp on 10.10.40.122
+Discovered open port 49161/tcp on 10.10.40.122
+Discovered open port 49152/tcp on 10.10.40.122
+Discovered open port 31337/tcp on 10.10.40.122
+Discovered open port 49154/tcp on 10.10.40.122
+Discovered open port 49155/tcp on 10.10.40.122
+Discovered open port 49153/tcp on 10.10.40.122
+Discovered open port 49165/tcp on 10.10.40.122
+Completed Connect Scan at 10:18, 15.12s elapsed (1000 total ports)
+Initiating Service scan at 10:18
+Scanning 11 services on 10.10.40.122
+Service scan Timing: About 36.36% done; ETC: 10:21 (0:01:40 remaining)
+Completed Service scan at 10:21, 161.76s elapsed (11 services on 1 host)
+NSE: Script scanning 10.10.40.122.
+Initiating NSE at 10:21
+Completed NSE at 10:21, 0.02s elapsed
+Initiating NSE at 10:21
+Completed NSE at 10:21, 1.21s elapsed
+Nmap scan report for 10.10.40.122
+Host is up (0.20s latency).
+Not shown: 989 closed ports
+PORT      STATE SERVICE            VERSION
+135/tcp   open  msrpc              Microsoft Windows RPC
+139/tcp   open  netbios-ssn        Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds       Microsoft Windows 7 - 10 microsoft-ds (workgroup: WORKGROUP)
+3389/tcp  open  ssl/ms-wbt-server?
+31337/tcp open  Elite?
+49152/tcp open  msrpc              Microsoft Windows RPC
+49153/tcp open  msrpc              Microsoft Windows RPC
+49154/tcp open  msrpc              Microsoft Windows RPC
+49155/tcp open  msrpc              Microsoft Windows RPC
+49161/tcp open  msrpc              Microsoft Windows RPC
+49165/tcp open  msrpc              Microsoft Windows RPC
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port31337-TCP:V=7.91%I=7%D=9/26%Time=61508F6A%P=x86_64-pc-linux-gnu%r(G
+SF:etRequest,24,"Hello\x20GET\x20/\x20HTTP/1\.0\r!!!\nHello\x20\r!!!\n")%r
+SF:(SIPOptions,142,"Hello\x20OPTIONS\x20sip:nm\x20SIP/2\.0\r!!!\nHello\x20
+SF:Via:\x20SIP/2\.0/TCP\x20nm;branch=foo\r!!!\nHello\x20From:\x20<sip:nm@n
+SF:m>;tag=root\r!!!\nHello\x20To:\x20<sip:nm2@nm2>\r!!!\nHello\x20Call-ID:
+SF:\x2050000\r!!!\nHello\x20CSeq:\x2042\x20OPTIONS\r!!!\nHello\x20Max-Forw
+SF:ards:\x2070\r!!!\nHello\x20Content-Length:\x200\r!!!\nHello\x20Contact:
+SF:\x20<sip:nm@nm>\r!!!\nHello\x20Accept:\x20application/sdp\r!!!\nHello\x
+SF:20\r!!!\n")%r(GenericLines,16,"Hello\x20\r!!!\nHello\x20\r!!!\n")%r(HTT
+SF:POptions,28,"Hello\x20OPTIONS\x20/\x20HTTP/1\.0\r!!!\nHello\x20\r!!!\n"
+SF:)%r(RTSPRequest,28,"Hello\x20OPTIONS\x20/\x20RTSP/1\.0\r!!!\nHello\x20\
+SF:r!!!\n")%r(Help,F,"Hello\x20HELP\r!!!\n")%r(SSLSessionReq,C,"Hello\x20\
+SF:x16\x03!!!\n")%r(TerminalServerCookie,B,"Hello\x20\x03!!!\n")%r(TLSSess
+SF:ionReq,C,"Hello\x20\x16\x03!!!\n")%r(Kerberos,A,"Hello\x20!!!\n")%r(Fou
+SF:rOhFourRequest,47,"Hello\x20GET\x20/nice%20ports%2C/Tri%6Eity\.txt%2eba
+SF:k\x20HTTP/1\.0\r!!!\nHello\x20\r!!!\n")%r(LPDString,12,"Hello\x20\x01de
+SF:fault!!!\n")%r(LDAPSearchReq,17,"Hello\x200\x84!!!\nHello\x20\x01!!!\n"
+SF:);
+Service Info: Host: GATEKEEPER; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 178.61 seconds
