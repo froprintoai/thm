@@ -71,3 +71,7 @@ Scan smb shares (```nmap -script=smb-enum-shares $TARGET_IP | tee nmap_smb_resul
 Accessed to Users using smblient(```smbclient //$TARGET_IP/Users -p 445 ```), then I found gatekeeper.exe in Share folder.  
 Set up Windows 7 32bit on virtual machine, ran Immunity Debugger on gatekeeper.  
 It turned out that gatekeeper.exe is the service run on port 31337.  
+
+Fuzzing with "A"*200 crashed the program.  
+Sending cyclic patterns reveals that EIP offset is 146 bytes.  
+![alt text](./images/mona_EIP_offset.png?raw=true)  
