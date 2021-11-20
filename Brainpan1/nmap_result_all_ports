@@ -1,0 +1,77 @@
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-11-19 21:12 CST
+NSE: Loaded 45 scripts for scanning.
+Initiating Ping Scan at 21:12
+Scanning 10.10.173.1 [2 ports]
+Completed Ping Scan at 21:12, 0.19s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 21:12
+Completed Parallel DNS resolution of 1 host. at 21:12, 0.01s elapsed
+Initiating Connect Scan at 21:12
+Scanning 10.10.173.1 [65535 ports]
+Connect Scan Timing: About 3.36% done; ETC: 21:27 (0:14:52 remaining)
+Discovered open port 10000/tcp on 10.10.173.1
+Connect Scan Timing: About 17.21% done; ETC: 21:29 (0:14:02 remaining)
+Connect Scan Timing: About 27.56% done; ETC: 21:30 (0:13:11 remaining)
+Connect Scan Timing: About 32.83% done; ETC: 21:30 (0:12:13 remaining)
+Connect Scan Timing: About 38.36% done; ETC: 21:30 (0:11:16 remaining)
+Connect Scan Timing: About 44.19% done; ETC: 21:30 (0:10:15 remaining)
+Connect Scan Timing: About 48.66% done; ETC: 21:30 (0:09:18 remaining)
+Discovered open port 9999/tcp on 10.10.173.1
+Connect Scan Timing: About 53.22% done; ETC: 21:30 (0:08:22 remaining)
+Connect Scan Timing: About 58.76% done; ETC: 21:30 (0:07:23 remaining)
+Connect Scan Timing: About 63.73% done; ETC: 21:30 (0:06:28 remaining)
+Connect Scan Timing: About 68.42% done; ETC: 21:29 (0:05:34 remaining)
+Connect Scan Timing: About 73.51% done; ETC: 21:29 (0:04:39 remaining)
+Connect Scan Timing: About 78.67% done; ETC: 21:29 (0:03:45 remaining)
+Connect Scan Timing: About 84.02% done; ETC: 21:29 (0:02:49 remaining)
+Connect Scan Timing: About 89.14% done; ETC: 21:29 (0:01:54 remaining)
+Connect Scan Timing: About 94.23% done; ETC: 21:29 (0:01:01 remaining)
+Completed Connect Scan at 21:29, 1045.15s elapsed (65535 total ports)
+Initiating Service scan at 21:29
+Scanning 2 services on 10.10.173.1
+Completed Service scan at 21:29, 17.25s elapsed (2 services on 1 host)
+NSE: Script scanning 10.10.173.1.
+Initiating NSE at 21:29
+Completed NSE at 21:30, 30.21s elapsed
+Initiating NSE at 21:30
+Completed NSE at 21:30, 0.89s elapsed
+Nmap scan report for 10.10.173.1
+Host is up (0.19s latency).
+Not shown: 65533 closed ports
+PORT      STATE SERVICE VERSION
+9999/tcp  open  abyss?
+10000/tcp open  http    SimpleHTTPServer 0.6 (Python 2.7.3)
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port9999-TCP:V=7.91%I=7%D=11/19%Time=61986BAB%P=x86_64-pc-linux-gnu%r(N
+SF:ULL,298,"_\|\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20_\|\x20\x20\x20\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x
+SF:20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\
+SF:x20\n_\|_\|_\|\x20\x20\x20\x20_\|\x20\x20_\|_\|\x20\x20\x20\x20_\|_\|_\
+SF:|\x20\x20\x20\x20\x20\x20_\|_\|_\|\x20\x20\x20\x20_\|_\|_\|\x20\x20\x20
+SF:\x20\x20\x20_\|_\|_\|\x20\x20_\|_\|_\|\x20\x20\n_\|\x20\x20\x20\x20_\|\
+SF:x20\x20_\|_\|\x20\x20\x20\x20\x20\x20_\|\x20\x20\x20\x20_\|\x20\x20_\|\
+SF:x20\x20_\|\x20\x20\x20\x20_\|\x20\x20_\|\x20\x20\x20\x20_\|\x20\x20_\|\
+SF:x20\x20\x20\x20_\|\x20\x20_\|\x20\x20\x20\x20_\|\n_\|\x20\x20\x20\x20_\
+SF:|\x20\x20_\|\x20\x20\x20\x20\x20\x20\x20\x20_\|\x20\x20\x20\x20_\|\x20\
+SF:x20_\|\x20\x20_\|\x20\x20\x20\x20_\|\x20\x20_\|\x20\x20\x20\x20_\|\x20\
+SF:x20_\|\x20\x20\x20\x20_\|\x20\x20_\|\x20\x20\x20\x20_\|\n_\|_\|_\|\x20\
+SF:x20\x20\x20_\|\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20_\|_\|_\|\x20\x20
+SF:_\|\x20\x20_\|\x20\x20\x20\x20_\|\x20\x20_\|_\|_\|\x20\x20\x20\x20\x20\
+SF:x20_\|_\|_\|\x20\x20_\|\x20\x20\x20\x20_\|\n\x20\x20\x20\x20\x20\x20\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x
+SF:20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\
+SF:x20\x20_\|\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\
+SF:x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\n\x20\x20\x20\x20\x20\x20\x
+SF:20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\
+SF:x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20
+SF:\x20\x20_\|\n\n\[________________________\x20WELCOME\x20TO\x20BRAINPAN\
+SF:x20_________________________\]\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20ENTER\
+SF:x20THE\x20PASSWORD\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\
+SF:x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\n\n
+SF:\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20\x20>>\x20");
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 1093.94 seconds
