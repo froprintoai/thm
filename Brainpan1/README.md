@@ -88,4 +88,11 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 /bin                  (Status: 301) [Size: 0] [--> /bin/]
 ```
 
-Then, I found brainpan.exe in a directory named bin. (http://$TARGET_IP:10000/bin)  
+Then, I found brainpan.exe in a directory named bin. (http://$TARGET_IP:10000/bin)
+
+After analyzing brainpan.exe, I could get reverse shell to remote host.  
+It seemed brainpan.exe was a wine program working on linux.  
+Recreating an exploit script (exploit_linux.py), I could get a reverse shell to linux host.  
+Running ```sudo -l``` told me that I could run ```/home/anansi/bin/anansi_util``` with privileged right.  
+Seemingly anansi_util utilizes ```man``` command, which means I could run ```sudo man``` without password.  
+Checking GTFOBins for privilege escalation from ```sudo man```, I could get root privilege.  
